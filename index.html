@@ -1046,6 +1046,377 @@
             margin-top: 10px;
         }
 
+        /* LOVE STORY JOURNEY SECTION */
+        .love-journey-container {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .milestone-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .milestone-card:nth-child(even) {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.5);
+            border-color: rgba(255, 107, 157, 0.5);
+        }
+
+        .milestone-future {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(196, 69, 105, 0.2));
+            border: 3px solid rgba(255, 107, 157, 0.5);
+        }
+
+        .milestone-icon {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .milestone-content {
+            text-align: center;
+        }
+
+        .milestone-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .milestone-date {
+            font-size: 1.2em;
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .milestone-description {
+            font-size: 1.1em;
+            color: #fff;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .milestone-hearts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            font-size: 1.5em;
+        }
+
+        .milestone-hearts span {
+            animation: heartFloat 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        .milestone-hearts span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .milestone-hearts span:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .milestone-hearts span:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes heartFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .journey-line {
+            width: 4px;
+            height: 50px;
+            background: linear-gradient(180deg, #ff6b9d, #c44569);
+            margin: 0 auto;
+            border-radius: 2px;
+            position: relative;
+            animation: lineGrow 0.5s ease-out;
+        }
+
+        @keyframes lineGrow {
+            from {
+                height: 0;
+                opacity: 0;
+            }
+            to {
+                height: 50px;
+                opacity: 1;
+            }
+        }
+
+        .journey-line::before,
+        .journey-line::after {
+            content: '💖';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .journey-line::before {
+            top: -10px;
+        }
+
+        .journey-line::after {
+            bottom: -10px;
+        }
+
+        /* LOVE STATS GRID */
+        .love-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 107, 157, 0.5);
+            border-color: rgba(255, 107, 157, 0.6);
+        }
+
+        .stat-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+            75% {
+                transform: translateY(-5px) rotate(-5deg);
+            }
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #ff6b9d;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* QURANIC VERSE SECTION */
+        .quran-verse-container {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.15), rgba(0, 100, 0, 0.15));
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 3px solid rgba(34, 139, 34, 0.3);
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quran-verse-container::before {
+            content: '☪️';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 200px;
+            opacity: 0.05;
+            transform: rotate(15deg);
+        }
+
+        .quran-verse-container::after {
+            content: '🕌';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            font-size: 150px;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+
+        .quran-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .bismillah {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            font-size: 1.8em;
+            color: #228B22;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(34, 139, 34, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .verse-reference {
+            font-size: 1.3em;
+            color: #2E8B57;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .verse-arabic {
+            font-family: 'Amiri', 'Traditional Arabic', 'Arial Unicode MS', serif;
+            font-size: 1.8em;
+            line-height: 2.2;
+            color: #fff;
+            text-align: center;
+            margin: 35px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(34, 139, 34, 0.2);
+            direction: rtl;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .verse-translation {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 35px;
+            border-radius: 20px;
+            border-left: 5px solid #228B22;
+            margin: 30px 0;
+        }
+
+        .verse-translation p {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #fff;
+            font-style: italic;
+            text-align: justify;
+        }
+
+        .verse-message {
+            text-align: center;
+            margin-top: 35px;
+            padding: 25px;
+            background: rgba(34, 139, 34, 0.1);
+            border-radius: 15px;
+            border: 2px dashed rgba(34, 139, 34, 0.3);
+        }
+
+        .message-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: heartPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .verse-message p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #e0ffe0;
+            font-weight: 500;
+        }
+
         /* Custom Popup Notification */
         .custom-popup {
             position: fixed;
@@ -1419,6 +1790,129 @@
                 margin-top: 8px;
             }
 
+            /* Love Journey Mobile */
+            .love-journey-container {
+                padding: 20px 10px;
+                margin-bottom: 40px;
+            }
+
+            .milestone-card {
+                padding: 30px 20px;
+                margin: 20px 0;
+                border-radius: 20px;
+            }
+
+            .milestone-icon {
+                font-size: 3em;
+                margin-bottom: 15px;
+            }
+
+            .milestone-title {
+                font-size: 1.5em;
+                margin-bottom: 8px;
+            }
+
+            .milestone-date {
+                font-size: 1em;
+                margin-bottom: 12px;
+            }
+
+            .milestone-description {
+                font-size: 1em;
+                line-height: 1.6;
+            }
+
+            .milestone-hearts {
+                gap: 12px;
+                margin-top: 20px;
+                font-size: 1.3em;
+            }
+
+            .journey-line {
+                height: 30px;
+            }
+
+            .journey-line::before,
+            .journey-line::after {
+                font-size: 16px;
+            }
+
+            /* Love Stats Mobile */
+            .love-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 0 10px;
+                margin: 40px auto 0;
+            }
+
+            .stat-card {
+                padding: 25px 15px;
+                border-radius: 15px;
+            }
+
+            .stat-icon {
+                font-size: 2em;
+                margin-bottom: 10px;
+            }
+
+            .stat-number {
+                font-size: 1.8em;
+                margin-bottom: 8px;
+            }
+
+            .stat-label {
+                font-size: 0.9em;
+            }
+
+            /* Quranic Verse Mobile */
+            .quran-verse-container {
+                margin: 40px 10px 0;
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .bismillah {
+                font-size: 1.3em;
+                margin-bottom: 12px;
+            }
+
+            .verse-reference {
+                font-size: 1em;
+            }
+
+            .verse-arabic {
+                font-size: 1.3em;
+                line-height: 2;
+                padding: 20px 15px;
+                margin: 25px 0;
+            }
+
+            .verse-translation {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            .verse-translation p {
+                font-size: 1em;
+                line-height: 1.7;
+                text-align: left;
+            }
+
+            .verse-message {
+                padding: 20px 15px;
+                margin-top: 25px;
+            }
+
+            .message-icon {
+                font-size: 2.5em;
+                margin-bottom: 12px;
+            }
+
+            .verse-message p {
+                font-size: 1em;
+                line-height: 1.7;
+            }
+
             /* Custom Popup Mobile */
             .custom-popup {
                 max-width: 90%;
@@ -1544,9 +2038,16 @@
                 font-size: 1.3em;
             }
 
-            .counter-grid {
+            .love-stats-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+            }
+
+            .milestone-title {
+                font-size: 1.3em;
+            }
+
+            .milestone-icon {
+                font-size: 2.5em;
             }
         }
 
@@ -1587,7 +2088,11 @@
     <!-- Fireworks Container -->
     <div class="fireworks" id="fireworks"></div>
 
-   
+    <!-- Music Player -->
+    <div class="music-player paused" id="musicPlayer" onclick="toggleMusic()">
+        <div class="music-icon">🎵</div>
+        <div class="music-text">Click to Play</div>
+    </div>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -1609,7 +2114,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>Shameema ❤️</h1>
-<h2>أنتِ حياتي <span>Hayati</span></h2>
+            <h2>You Are My Universe</h2>
             <p class="hero-subtitle">From Mohamed Issham, with endless love</p>
             <div class="scroll-indicator" onclick="scrollToSection('gallery')">💝 Explore Our Love Story 💝</div>
         </section>
@@ -1687,7 +2192,6 @@
                 </div>
             </div>
         </section>
-
         <!-- LOVE QUIZ SECTION -->
         <section class="section" id="quiz">
             <h2 class="section-title">Our Love Quiz 💝</h2>
@@ -1763,35 +2267,107 @@
             </div>
         </section>
 
-        <!-- 3D Rose Garden -->
-        <section class="section">
-            <h2 class="section-title">Garden of Love</h2>
-            <div class="rose-garden">
-                <div class="rose-garden-inner" id="roseGarden"></div>
-            </div>
-        </section>
+        <!-- Our Love Story Journey -->
+        <section class="section" id="journey">
+            <h2 class="section-title">Our Love Story Journey</h2>
+            
+            <div class="love-journey-container">
+                <!-- Milestone 1 -->
+                <div class="milestone-card" data-aos="fade-up">
+                    <div class="milestone-icon">💬</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">First Message</h3>
+                        <p class="milestone-date">August 8, 2024</p>
+                        <p class="milestone-description">The day our story began! A simple message that changed everything. From strangers to soulmates. 💕</p>
+                    </div>
+                    <div class="milestone-hearts">
+                        <span>💖</span><span>💕</span><span>💝</span>
+                    </div>
+                </div>
 
-        <!-- Love Counter -->
-        <section class="section">
-            <div class="love-counter">
-                <h2 class="section-title">Our Love in Numbers</h2>
-                <div class="counter-grid">
-                    <div class="counter-item">
-                        <span class="counter-number" id="daysCounter">0</span>
-                        <div class="counter-label">Days Together</div>
+                <!-- Connecting Line -->
+                <div class="journey-line"></div>
+
+                <!-- Milestone 2 -->
+                <div class="milestone-card" data-aos="fade-up">
+                    <div class="milestone-icon">🏍️</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">First Ride Together</h3>
+                        <p class="milestone-date">September 22, 2024</p>
+                        <p class="milestone-description">Wind in our hair, hearts racing together. The moment I knew you were my adventure partner forever! 🌟</p>
                     </div>
-                    <div class="counter-item">
-                        <span class="counter-number" id="heartbeatsCounter">0</span>
-                        <div class="counter-label">Heartbeats for You</div>
+                    <div class="milestone-hearts">
+                        <span>❤️</span><span>💗</span><span>✨</span>
                     </div>
-                    <div class="counter-item">
-                        <span class="counter-number">∞</span>
-                        <div class="counter-label">Love for You</div>
+                </div>
+
+                <!-- Connecting Line -->
+                <div class="journey-line"></div>
+
+                <!-- Milestone 3 -->
+                <div class="milestone-card" data-aos="fade-up">
+                    <div class="milestone-icon">💍</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">I Asked You</h3>
+                        <p class="milestone-date">The Best Day Ever</p>
+                        <p class="milestone-description">"Will you be my Isshameema?" - Two souls became one. You said yes and made me the happiest! 🌹</p>
                     </div>
-                    <div class="counter-item">
-                        <span class="counter-number" id="smilesCounter">0</span>
-                        <div class="counter-label">Smiles Shared</div>
+                    <div class="milestone-hearts">
+                        <span>💖</span><span>👑</span><span>💝</span>
                     </div>
+                </div>
+
+                <!-- Connecting Line -->
+                <div class="journey-line"></div>
+
+                <!-- Milestone 4 -->
+                <div class="milestone-card" data-aos="fade-up">
+                    <div class="milestone-icon">🎁</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">Valentine's Day 2025</h3>
+                        <p class="milestone-date">February 14, 2025</p>
+                        <p class="milestone-description">Today! I made this website to show you how much you mean to me. Every day with you is a gift! 💐</p>
+                    </div>
+                    <div class="milestone-hearts">
+                        <span>💕</span><span>🎉</span><span>💖</span>
+                    </div>
+                </div>
+
+                <!-- Connecting Line -->
+                <div class="journey-line"></div>
+
+                <!-- Milestone 5 - Future -->
+                <div class="milestone-card milestone-future" data-aos="fade-up">
+                    <div class="milestone-icon">♾️</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">Forever & Always</h3>
+                        <p class="milestone-date">Our Future Together</p>
+                        <p class="milestone-description">Every sunrise, every sunset, every moment ahead - I want to spend them all with you. You and me, forever! 🌈</p>
+                    </div>
+                    <div class="milestone-hearts">
+                        <span>💝</span><span>🌟</span><span>💖</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quranic Verse Section -->
+            <div class="quran-verse-container">
+                <div class="quran-header">
+                    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                    <div class="verse-reference">Surah Al-Ahzab (33:35)</div>
+                </div>
+                
+                <div class="verse-arabic">
+                    إِنَّ الْمُسْلِمِينَ وَالْمُسْلِمَاتِ وَالْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَالْقَانِتِينَ وَالْقَانِتَاتِ وَالصَّادِقِينَ وَالصَّادِقَاتِ وَالصَّابِرِينَ وَالصَّابِرَاتِ وَالْخَاشِعِينَ وَالْخَاشِعَاتِ وَالْمُتَصَدِّقِينَ وَالْمُتَصَدِّقَاتِ وَالصَّائِمِينَ وَالصَّائِمَاتِ وَالْحَافِظِينَ فُرُوجَهُمْ وَالْحَافِظَاتِ وَالذَّاكِرِينَ اللَّهَ كَثِيرًا وَالذَّاكِرَاتِ أَعَدَّ اللَّهُ لَهُم مَّغْفِرَةً وَأَجْرًا عَظِيمًا
+                </div>
+
+                <div class="verse-translation">
+                    <p>"Indeed, the Muslim men and Muslim women, the believing men and believing women, the obedient men and obedient women, the truthful men and truthful women, the patient men and patient women, the humble men and humble women, the charitable men and charitable women, the fasting men and fasting women, the men who guard their private parts and the women who do so, and the men who remember Allah often and the women who do so - for them Allah has prepared forgiveness and a great reward."</p>
+                </div>
+
+                <div class="verse-message">
+                    <div class="message-icon">💚</div>
+                    <p>May Allah bless our union and guide us to be among the righteous believers mentioned in this beautiful verse. Together, we strive to grow in faith, patience, and love for His sake. Ameen. 🤲</p>
                 </div>
             </div>
         </section>
@@ -1827,13 +2403,16 @@
             </div>
         </section>
 
-       
+        <!-- Interactive Button -->
+        <button class="heart-btn" onclick="createMagic()">
+            <span>💖 Click for Magic 💖</span>
+        </button>
     </div>
 
     <!-- Footer -->
     <div class="footer">
         <p>Made with ❤️ for the love of my life</p>
-        <p>Happy Valentine's Day 2026</p>
+        <p>Happy Valentine's Day 2025</p>
         <div class="heart-signature">Forever Yours, Mohamed Issham</div>
     </div>
 
@@ -2108,37 +2687,9 @@
         `;
         document.head.appendChild(miniStyle);
 
-        // 3D Rose Garden
-        function create3DRoseGarden() {
-            const garden = document.getElementById('roseGarden');
-            const roses = ['🌹', '💖', '❤️', '💕', '💝', '🌺'];
-            const numLayers = 5;
-            
-            for (let layer = 0; layer < numLayers; layer++) {
-                const layerDiv = document.createElement('div');
-                layerDiv.className = 'rose-layer';
-                
-                const numRoses = 8 + layer * 2;
-                const radius = 150 + layer * 50;
-                
-                for (let i = 0; i < numRoses; i++) {
-                    const rose = document.createElement('div');
-                    rose.className = 'rose-3d';
-                    rose.innerHTML = roses[Math.floor(Math.random() * roses.length)];
-                    
-                    const angle = (i / numRoses) * Math.PI * 2;
-                    const x = Math.cos(angle) * radius;
-                    const z = Math.sin(angle) * radius;
-                    const y = Math.sin(i) * 30;
-                    
-                    rose.style.transform = `translate3d(${x}px, ${y}px, ${z}px) rotateY(${angle}rad)`;
-                    rose.style.animationDelay = `${i * 0.1}s`;
-                    
-                    layerDiv.appendChild(rose);
-                }
-                
-                garden.appendChild(layerDiv);
-            }
+        // Counters Animation (removed - no longer needed)
+        function animateCounters() {
+            // Counter animation removed as stats section replaced with Quranic verse
         }
 
         // Floating Elements
@@ -2233,17 +2784,6 @@
             }
         }
 
-        // Counters Animation
-        function animateCounters() {
-            const startDate = new Date('2024-08-08'); // Updated to August 8, 2024
-            const today = new Date();
-            const days = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
-            
-            animateValue('daysCounter', 0, days, 2000);
-            animateValue('heartbeatsCounter', 0, days * 100000, 2000);
-            animateValue('smilesCounter', 0, days * 100, 2000);
-        }
-
         function animateValue(id, start, end, duration) {
             const element = document.getElementById(id);
             const range = end - start;
@@ -2310,9 +2850,7 @@
         function initializeEverything() {
             initParticles();
             animateParticles();
-            create3DRoseGarden();
             createFloatingElements();
-            animateCounters();
         }
 
         // Window Resize
@@ -2351,4 +2889,3 @@
     </script>
 </body>
 </html>
-
